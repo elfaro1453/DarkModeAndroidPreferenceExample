@@ -10,6 +10,8 @@ import androidx.preference.PreferenceManager
 class DarkModeApp : Application() {
     override fun onCreate() {
         super.onCreate()
+        // KODE DIBAWAH digunakan untuk setting dark mode.
+        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
         // buat variabel sharedPreferences
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
@@ -20,7 +22,7 @@ class DarkModeApp : Application() {
         if (isDarkMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else { // selainnya ubah ke tema terang / mode night np
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
     }
 }
